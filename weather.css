@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+.card {
+	display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+	grid-template-areas:
+	"title  title"
+	"desc   desc"
+	"icon   icon"
+	"now   	high"
+	"unit    low"
+	"header header";
+	
+	height: 450px;
+	width: 300px;
+	border-radius: 20px;
+	border: 5px solid black;
+	padding: 4px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 40px;
+	text-align: center;
+}
+
+.place {
+	grid-area: title;
+}
+
+.desc {
+	grid-area: desc;
+}
+
+.icon {
+	grid-area: icon;
+	height: 200px;
+}
+
+.temp.high {
+	grid-area: high;
+}
+
+.temp.now {
+	grid-area: now;
+}
+
+.temp.low {
+	grid-area: low;
+}
+
+.temp.cel {
+	grid-area: unit;
+	height: 40px;
+}
+
+.title {
+	grid-area: header;
+}

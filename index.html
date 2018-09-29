@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather Card</title>
+<link href="./weather.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div class="weather card">
+<div class="place">     London </div>
+<div class="desc">      Cloudy  </div>
+<img class="icon" src=""/>
+<div class="temp high">  00</div>
+<div class="temp low">   00</div>
+<div class="temp now">   00</div>
+<div class="temp cel"><img src="./svg/celsius.svg"/></div>
+<div class="title">     Weather</div>
+</div>
+<script>
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+  getData(crd.latitude, crd.longitude);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+  console.warn("Loading weather for London");
+  getData("51.50", "-0.12")
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
+function renderData(data) {
+	document.getElementsByClassName("place")[0].innerHTML = data.name;
+	document.getElementsByClassName("desc")[0].innerHTML = data.weather[0].description;
+	document.getElementsByClassName("icon")[0].src = "./svg/"+data.weather[0].icon+".svg"
+	document.getElementsByClassName("high")[0].innerHTML = data.main.temp_max;
+	document.getElementsByClassName("low")[0].innerHTML = data.main.temp_min;
+	document.getElementsByClassName("now")[0].innerHTML = data.main.temp;
+}
+
+function getData(lat, lon) {
+	xhttp=new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == XMLHttpRequest.DONE) {
+        var d = JSON.parse(xhttp.responseText);
+		renderData(d);
+		return;
+    }
+}
+	xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?lat="+String(lat)+"&lon="+String(lon)+"&appid=35a9cd0aad6e7c654ff354b9bbdc998a&units=metric" ,true);
+	xhttp.send();
+};
+</script>
+</body>
+</html>
