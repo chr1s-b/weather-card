@@ -8,7 +8,7 @@
 <div class="weather card">
 <div class="place">     London </div>
 <div class="desc">      Cloudy  </div>
-<img class="icon" src=""/>
+<object class="icon" data="" type="image/svg+xml"></object>
 <div class="temp high">  00</div>
 <div class="temp low">   00</div>
 <div class="temp now">   00</div>
@@ -39,7 +39,7 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 function renderData(data) {
 	document.getElementsByClassName("place")[0].innerHTML = data.name;
 	document.getElementsByClassName("desc")[0].innerHTML = data.weather[0].description;
-	document.getElementsByClassName("icon")[0].src = prod_svgPath+data.weather[0].icon+".svg"
+	document.getElementsByClassName("icon")[0].data = prod_svgPath+data.weather[0].icon+".svg"
 	document.getElementsByClassName("high")[0].innerHTML = "Hi "+ data.main.temp_max+" &deg;C";
 	document.getElementsByClassName("low")[0].innerHTML = "Lo "+data.main.temp_min+" &deg;C";
 	document.getElementsByClassName("now")[0].innerHTML = "Now "+data.main.temp+" &deg;C";
