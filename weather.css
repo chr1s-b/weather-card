@@ -48,12 +48,10 @@
 	grid-area: low;
 }
 
-.temp.cel {
+.cel {
 	grid-area: unit;
-}
-
-.temp.cel>img {
 	height: 100%;
+	margin: auto;
 }
 
 .title {
