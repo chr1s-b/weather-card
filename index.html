@@ -55,7 +55,7 @@ function getData(lat, lon) {
 		return;
     }
 }
-	xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?lat="+String(lat)+"&lon="+String(lon)+"&appid=35a9cd0aad6e7c654ff354b9bbdc998a&units=metric" ,true);
+	xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?lat="+String(lat)+"&lon="+String(lon)+"&appid=35a9cd0aad6e7c654ff354b9bbdc998a&units=metric" ,true);
 	xhttp.send();
 };
 </script>
