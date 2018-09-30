@@ -8,8 +8,8 @@
 	"title  title"
 	"desc   desc"
 	"icon   icon"
-	"now   	high"
-	"unit    low"
+	"high   low"
+	"now    now"
 	"header header";
 	
 	height: 450px;
@@ -18,7 +18,7 @@
 	border: 5px solid black;
 	padding: 4px;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 40px;
+	font-size: 2em;
 	text-align: center;
 }
 
