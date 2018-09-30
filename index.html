@@ -43,6 +43,7 @@ function renderData(data) {
 	document.getElementsByClassName("high")[0].innerHTML = data.main.temp_max;
 	document.getElementsByClassName("low")[0].innerHTML = data.main.temp_min;
 	document.getElementsByClassName("now")[0].innerHTML = data.main.temp;
+	console.info("Done.");
 }
 
 function getData(lat, lon) {

@@ -3,7 +3,7 @@
 .card {
 	display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
+    grid-template-rows: 15% 10% 30% 15% 15% 15%;
 	grid-template-areas:
 	"title  title"
 	"desc   desc"
@@ -32,7 +32,8 @@
 
 .icon {
 	grid-area: icon;
-	height: 200px;
+	height: 100%;
+	margin: auto;
 }
 
 .temp.high {
@@ -49,7 +50,10 @@
 
 .temp.cel {
 	grid-area: unit;
-	height: 40px;
+}
+
+.temp.cel>img {
+	height: 100%;
 }
 
 .title {
